@@ -70,11 +70,6 @@ jQuery(document).ready(function($) {
         });
     }
     
-    // Add CSS for fade in effect
-    $('<style>')
-        .html('.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; } .fade-in.visible { opacity: 1; transform: translateY(0); }')
-        .appendTo('head');
-    
     // Trigger fade in on load and scroll
     fadeInOnScroll();
     $(window).on('scroll', fadeInOnScroll);
