@@ -1,0 +1,36 @@
+# WordPress Core Files
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/xmlrpc.php
+/license.txt
+/readme.html
+
+# WordPress Config
+wp-config.php
+
+# Uploads and Cache
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+
+# Plugins (except custom ones if any)
+/wp-content/plugins/*
+!/wp-content/plugins/custom-plugins/
+
+# Development Files
+*.log
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.htaccess
+
+# Node modules (if using build tools)
+node_modules/
+/npm-debug.log
+
+# Database
+*.sql
+*.sql.gz
