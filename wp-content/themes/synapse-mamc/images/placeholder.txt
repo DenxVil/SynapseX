@@ -1,0 +1,33 @@
+# Placeholder Images Guide
+
+This directory should contain the following images for the theme to display properly:
+
+1. **default-society.jpg** (300x200px)
+   - A default image for societies without a featured image
+   - Suggested content: MAMC campus or medical college theme
+
+2. **default-event.jpg** (300x200px)
+   - A default image for events without a featured image
+   - Suggested content: Festival/event themed image
+
+3. **screenshot.png** (1200x900px)
+   - Theme screenshot for WordPress theme selector
+   - Should show the homepage design
+
+To add these images:
+1. Create or download appropriate images
+2. Save them in this directory
+3. Update the theme to use them
+
+For now, the theme will work without these images, but placeholders will appear as broken image links.
+
+You can use free stock photo sites like:
+- Unsplash.com
+- Pexels.com
+- Pixabay.com
+
+Search for terms like:
+- "medical college"
+- "festival event"
+- "cultural event"
+- "medical symposium"
