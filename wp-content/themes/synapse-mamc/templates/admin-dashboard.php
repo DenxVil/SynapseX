@@ -70,9 +70,9 @@ wp_reset_postdata();
             <h2><?php _e('Dashboard Overview', 'synapse-mamc'); ?></h2>
             <div>
                 <label for="society-select"><?php _e('Select Society:', 'synapse-mamc'); ?></label>
-                <select id="society-select" onchange="window.location.href='?page=society-dashboard&society_id=' + this.value">
+                <select id="society-select">
                     <?php foreach ($societies as $society) : ?>
-                        <option value="<?php echo $society->ID; ?>" <?php selected($selected_society, $society->ID); ?>>
+                        <option value="<?php echo esc_attr($society->ID); ?>" <?php selected($selected_society, $society->ID); ?>>
                             <?php echo esc_html($society->post_title); ?>
                         </option>
                     <?php endforeach; ?>
@@ -296,3 +296,12 @@ wp_reset_postdata();
     border: 1px solid #ddd;
 }
 </style>
+
+<script>
+jQuery(document).ready(function($) {
+    $('#society-select').on('change', function() {
+        var societyId = $(this).val();
+        window.location.href = '?page=society-dashboard&society_id=' + societyId;
+    });
+});
+</script>

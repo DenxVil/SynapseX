@@ -73,7 +73,7 @@ get_header(); ?>
                             <p><strong>💰 Fee:</strong><br>Free</p>
                         <?php endif; ?>
                         <?php if ($max_participants) : ?>
-                            <p><strong>👥 Spots Left:</strong><br><?php echo is_numeric($spots_left) ? $spots_left : $spots_left; ?></p>
+                            <p><strong>👥 Spots Left:</strong><br><?php echo esc_html($spots_left); ?></p>
                         <?php endif; ?>
                         
                         <?php if (is_numeric($spots_left) && $spots_left <= 0) : ?>

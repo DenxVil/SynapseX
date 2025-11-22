@@ -21,9 +21,10 @@ add_action('after_setup_theme', 'synapse_theme_setup');
 
 // Enqueue styles and scripts
 function synapse_enqueue_scripts() {
-    wp_enqueue_style('synapse-style', get_stylesheet_uri(), array(), '1.0.0');
-    wp_enqueue_style('synapse-custom', get_template_directory_uri() . '/css/custom.css', array(), '1.0.0');
-    wp_enqueue_script('synapse-script', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true);
+    $theme_version = wp_get_theme()->get('Version');
+    wp_enqueue_style('synapse-style', get_stylesheet_uri(), array(), $theme_version);
+    wp_enqueue_style('synapse-custom', get_template_directory_uri() . '/css/custom.css', array(), $theme_version);
+    wp_enqueue_script('synapse-script', get_template_directory_uri() . '/js/main.js', array('jquery'), $theme_version, true);
     
     // Localize script for AJAX
     wp_localize_script('synapse-script', 'synapseAjax', array(
@@ -190,7 +191,7 @@ function synapse_event_details_callback($post) {
             $societies = get_posts(array('post_type' => 'society', 'posts_per_page' => -1));
             foreach ($societies as $society) {
                 $selected = ($event_society == $society->ID) ? 'selected' : '';
-                echo '<option value="' . $society->ID . '" ' . $selected . '>' . $society->post_title . '</option>';
+                echo '<option value="' . esc_attr($society->ID) . '" ' . $selected . '>' . esc_html($society->post_title) . '</option>';
             }
             ?>
         </select>
